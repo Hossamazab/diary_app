@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# If the requested file/directory doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect all requests to index.php
+RewriteRule ^ index.php [L]
+
+# Enable mod_rewrite if not already enabled
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /diary_app/
+</IfModule>
